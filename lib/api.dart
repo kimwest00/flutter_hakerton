@@ -5,9 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<Album> fetchAlbum() async {
-  final response = await http.get(Uri.parse(
-      "https://1e85ce8f-6ffc-402d-9365-0576000728de.mock.pstmn.io/api/Facility"));
-  //print(response.statusCode);
+  final response = await http.get(
+      Uri.parse("https://1e85ce8f-6ffc-402d-9365-0576000728de.mock.pstmn.io/api/Facility"),
+      headers: {
+      "Accept": "application/json",
+      "Access-Control-Allow-Origin": "*"
+      });
+  print(response.statusCode);
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.

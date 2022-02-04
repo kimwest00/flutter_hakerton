@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_try/color.dart';
-import 'package:flutter_try/page1/HomePage2.dart';
-import 'package:flutter_try/page1/HomePage1.dart';
+import 'package:flutter_try/page1/HomePage.dart';
+
 
 void main() => runApp(
     MyApp()
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       title:'메뉴바를 만들어보자',
       theme: ThemeData(primarySwatch: Colors.red),
-      home: HomePage1(),
+      home: HomePage(),
     );
 
   }

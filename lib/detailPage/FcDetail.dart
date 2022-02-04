@@ -61,7 +61,7 @@ class _MyAppState extends State<NoPoverty1>{
                             _launchURL(snapshot.data!.data[2].f_home);
                           },
                           child: Image.network(
-                            snapshot.data!.data[0].f_logo,
+                            "https://storage.googleapis.com/content_image/%EB%A1%9C%EA%B3%A0/%E1%84%8E%E1%85%A9%E1%84%85%E1%85%A9%E1%86%A8%E1%84%8B%E1%85%AE%E1%84%89%E1%85%A1%E1%86%AB.gif?authuser=1",
                             fit: BoxFit.fill,
                           ),
 
