@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_try/page1/main.dart';
 import 'package:flutter_try/page1/HomePage1.dart';
+import 'package:flutter_try/page2/FcDetail.dart';
 import '../color.dart';
 import 'package:flutter_try/api.dart';
 
 class HomePage2 extends StatefulWidget {
   //static const color = const Color(0xffb74093);
-
   const HomePage2({Key? key}) : super(key: key);
   @override
   _MyAppState createState() => _MyAppState();
@@ -29,6 +29,10 @@ class _MyAppState extends State<HomePage2>{
             //centerTitle: true,
             actions: <Widget>[
               IconButton(onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) =>HomePage1())
+                );
               },
                 icon: Icon(Icons.adb),),
               IconButton(onPressed: (){
@@ -56,6 +60,10 @@ class _MyAppState extends State<HomePage2>{
                                         SizedBox(width: 300.0,),
                                         Text("더 알아보기",style: TextStyle(fontSize: 15),),
                                         IconButton(onPressed: (){
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(builder: (context) =>NoPoverty())
+                                          );
                                         },icon: Icon(Icons.arrow_forward_ios),),
 
                                       ],
@@ -118,6 +126,10 @@ class _MyAppState extends State<HomePage2>{
                                       SizedBox(width: 300.0,),
                                       Text("더 알아보기",style: TextStyle(fontSize: 15),),
                                       IconButton(onPressed: (){
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(builder: (context) =>NoPoverty())
+                                        );
                                       },icon: Icon(Icons.arrow_forward_ios),),
 
                                     ],
@@ -180,6 +192,10 @@ class _MyAppState extends State<HomePage2>{
                                       SizedBox(width: 300.0,),
                                       Text("더 알아보기",style: TextStyle(fontSize: 15),),
                                       IconButton(onPressed: (){
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(builder: (context) =>NoPoverty())
+                                        );
                                       },icon: Icon(Icons.arrow_forward_ios),),
 
                                     ],
@@ -242,6 +258,10 @@ class _MyAppState extends State<HomePage2>{
                                       SizedBox(width: 300.0,),
                                       Text("더 알아보기",style: TextStyle(fontSize: 15),),
                                       IconButton(onPressed: (){
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(builder: (context) =>NoPoverty())
+                                        );
                                       },icon: Icon(Icons.arrow_forward_ios),),
 
                                     ],

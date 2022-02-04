@@ -2,13 +2,17 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_try/color.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 class NoPoverty extends StatelessWidget
 {
   final List<String> imageList = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsZrtzlcoN_cbaZnq3ufcoPz6eMqeW2RYUm9GFzVkQFyrm-zmA7CPDkOS58NPWPTOjFUQ&usqp=CAU",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsZrtzlcoN_cbaZnq3ufcoPz6eMqeW2RYUm9GFzVkQFyrm-zmA7CPDkOS58NPWPTOjFUQ&usqp=CAU",
   ];
-
+  launchBrowser(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url, forceSafariVC: false, forceWebView: false);
+    }
+  }
 
   @override
   Widget build(BuildContext context)
@@ -23,6 +27,12 @@ class NoPoverty extends StatelessWidget
         ),
         body: Column(
           children:<Widget>[
+            OutlineButton(
+              onPressed: () {
+              setState(() {
+              launchBrowser("https://www.google.com");
+                });
+    },),
             Center(
               child: SizedBox(
                 height: 10,
