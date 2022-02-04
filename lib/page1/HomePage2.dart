@@ -58,7 +58,10 @@ class _MyAppState extends State<HomePage2>{
                                       children:[
                                         ClipOval(
                                             clipper : MyClipper()
-                                            ,child: Image.asset("assets/rufi.jpg",width: 50,height: 50,)
+                                            ,child: Image.network(
+                                          snapshot.data!.data[0].f_logo,
+                                          fit: BoxFit.fill,
+                                        )
                                         ),
                                         Text(snapshot.data!.data[0].f_name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
                                         SizedBox(width: 300.0,),
@@ -124,7 +127,10 @@ class _MyAppState extends State<HomePage2>{
                                     children:[
                                       ClipOval(
                                           clipper : MyClipper()
-                                          ,child: Image.asset("assets/rufi.jpg",width: 50,height: 50,)
+                                          ,child: Image.network(
+                                        snapshot.data!.data[1].f_logo,
+                                        fit: BoxFit.fill,
+                                      )
                                       ),
                                       Text(snapshot.data!.data[1].f_name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
                                       SizedBox(width: 300.0,),
@@ -190,7 +196,10 @@ class _MyAppState extends State<HomePage2>{
                                     children:[
                                       ClipOval(
                                           clipper : MyClipper()
-                                          ,child: Image.asset("assets/rufi.jpg",width: 50,height: 50,)
+                                          ,child: Image.network(
+                                        snapshot.data!.data[2].f_logo,
+                                        fit: BoxFit.fill,
+                                      )
                                       ),
                                       Text(snapshot.data!.data[2].f_name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
                                       SizedBox(width: 300.0,),
@@ -256,7 +265,10 @@ class _MyAppState extends State<HomePage2>{
                                     children:[
                                       ClipOval(
                                           clipper : MyClipper()
-                                          ,child: Image.asset("assets/rufi.jpg",width: 50,height: 50,)
+                                          ,child: Image.network(
+                                        snapshot.data!.data[3].f_logo,
+                                        fit: BoxFit.fill,
+                                      )
                                       ),
                                       Text(snapshot.data!.data[3].f_name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
                                       SizedBox(width: 300.0,),
@@ -322,7 +334,10 @@ class _MyAppState extends State<HomePage2>{
                                     children:[
                                       ClipOval(
                                           clipper : MyClipper()
-                                          ,child: Image.asset("assets/rufi.jpg",width: 50,height: 50,)
+                                          ,child: Image.network(
+                                        snapshot.data!.data[4].f_logo,
+                                        fit: BoxFit.fill,
+                                      )
                                       ),
                                       Text(snapshot.data!.data[3].f_name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
                                       SizedBox(width: 300.0,),

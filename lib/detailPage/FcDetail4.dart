@@ -57,12 +57,13 @@ class _MyAppState extends State<NoPoverty4>{
                         child: Container(
                           child: InkWell(
                             onTap: () {
-                              _launchURL(snapshot.data!.data[3].f_home);
+                              _launchURL(snapshot.data!.data[2].f_home);
                             },
-                            child: Ink.image(
-                              image: AssetImage('assets/rufi.jpg'),
-                              fit: BoxFit.cover,
+                            child: Image.network(
+                              snapshot.data!.data[3].f_logo,
+                              fit: BoxFit.fill,
                             ),
+
                           ),
                         ),
                       ),

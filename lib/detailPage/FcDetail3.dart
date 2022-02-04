@@ -59,13 +59,15 @@ class _MyAppState extends State<NoPoverty3>{
                         onTap: () {
                           _launchURL(snapshot.data!.data[2].f_home);
                         },
-                        child: Ink.image(
-                          image: AssetImage('assets/rufi.jpg'),
-                          fit: BoxFit.cover,
+                        child: Image.network(
+                          snapshot.data!.data[2].f_logo,
+                            fit: BoxFit.fill,
+                          ),
+
                         ),
                       ),
                     ),
-                  ),
+
                   // box and text
                   Center(
                     child: SizedBox(
