@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_try/page1/main.dart';
+import 'package:flutter_try/page1/HomePage1.dart';
 import '../color.dart';
 
 
