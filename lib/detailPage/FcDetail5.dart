@@ -138,7 +138,9 @@ class _MyAppState extends State<NoPoverty5>{
 
                   Container(
                     child: RaisedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _launchURL(snapshot.data!.data[4].f_pay);
+                      },
                       child: const Text('donation', style: TextStyle(fontSize: 20)),
                       color: mainColor,
                       textColor: Colors.white,
