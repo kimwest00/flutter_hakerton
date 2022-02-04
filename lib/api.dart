@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 
 Future<Album> fetchAlbum() async {
   final response = await http.get(
-      Uri.parse("https://1e85ce8f-6ffc-402d-9365-0576000728de.mock.pstmn.io/api/Facility"),
+      Uri.parse("http://34.64.163.180:8080/api/facilities"),
       headers: {
       "Accept": "application/json",
       "Access-Control-Allow-Origin": "*"
