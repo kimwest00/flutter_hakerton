@@ -16,9 +16,8 @@ class NoPoverty extends StatelessWidget
     return Scaffold(
         appBar: AppBar(
           title: ListTile(
-              trailing: Image.asset("assets/logolong.png", width: 100, height: 50)),
-          // title:Image.asset("assets/logolong.png",width:100,height:50),
-          // title:Image.asset("logolong.png",width:100,height:50),
+              trailing: Image.asset("assets/chario_logo.png", width: 100, height: 50)),
+
           // centerTitle: true,
           backgroundColor: mainColor,
         ),
@@ -36,7 +35,7 @@ class NoPoverty extends StatelessWidget
             Container
               (
               child: Ink.image(
-                image: AssetImage('assets/unisef.png'),
+                image: AssetImage('assets/rufi.jpg'),
                 fit: BoxFit.cover,
               ),
             ),

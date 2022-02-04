@@ -34,6 +34,7 @@ class HomePage2 extends StatelessWidget {
                 children:<Widget> [
                   Row(
                     children:[
+                      Text(snapshot.data!.data[0].f_phone)
                       ClipOval(
                           clipper : MyClipper()
                           ,child: Image.asset("assets/rufi.jpg",width: 50,height: 50,)

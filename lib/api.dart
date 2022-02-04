@@ -4,14 +4,17 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-Future<Album> Factory() async {
+Future<Album> fetchAlbum() async {
   final response = await http.get(Uri.parse(
-      "https://1e85ce8f-6ffc-402d-9365-0576000728de.mock.pstmn.io/api/members"));
-
+      "https://1e85ce8f-6ffc-402d-9365-0576000728de.mock.pstmn.io/api/Facility"));
+  //print(response.statusCode);
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
-    return Album.fromJson(jsonDecode(response.body));
+    String jsonData = response.body;
+    var myJson = jsonDecode(jsonData)['data'][0]['f_name'];
+    //print(myJson);
+    return Album.fromJson(jsonDecode(jsonData));
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
@@ -31,38 +34,44 @@ class Album {
 
   factory Album.fromJson(Map<String, dynamic> json) {
     var list = json['data'] as List;
-    print(list.runtimeType);
     List<Data> dataList = list.map((i) => Data.fromJson(i)).toList();
-
+    print(list);
     return Album(count: json['count'], data: dataList);
   }
 }
 
 class Data {
-  final String u_username;
-  final String u_name;
-  final String u_email;
-  final String u_phone;
-  final String u_birth;
-  final String u_sub;
+  final String f_name;
+  final String f_email;
+  final String f_phone;
+  final String f_home;
+  final String f_category;
+  final String f_minimal;
+  final String f_pay;
+  final String f_intro;
 
   Data({
-    required this.u_username,
-    required this.u_name,
-    required this.u_email,
-    required this.u_phone,
-    required this.u_birth,
-    required this.u_sub,
+    required this.f_name,
+    required this.f_email,
+    required this.f_phone,
+    required this.f_home,
+    required this.f_category,
+    required this.f_minimal,
+    required this.f_pay,
+    required this.f_intro,
   });
 
   factory Data.fromJson(Map<String, dynamic> json) {
     return Data(
-        u_username: json['u_username'],
-        u_name: json['u_name'],
-        u_email: json['u_email'],
-        u_phone: json['u_phone'],
-        u_birth: json['u_birth'],
-        u_sub: json['u_sub']);
+        f_name: json['f_name'],
+        f_email: json['f_email'],
+        f_phone: json['f_phone'],
+        f_home: json['f_home'],
+        f_category: json['f_category'],
+        f_intro: json['f_intro'],
+        f_pay: json['f_pay'],
+        f_minimal: json['f_minimal']);
+
   }
 }
 
@@ -83,7 +92,7 @@ class _MyAppState extends State<MyApp>
   @override
   void initState() {
     super.initState();
-    futureAlbum = Factory();
+    futureAlbum = fetchAlbum();
   }
 
   @override
@@ -104,12 +113,12 @@ class _MyAppState extends State<MyApp>
               if (snapshot.hasData) {
                 return Container(child:Row(
                   children: [
-                    Text(snapshot.data!.data[0].u_username)
-                    ,Text(snapshot.data!.data[1].u_username)
-                    ,Text(snapshot.data!.data[2].u_username)],
+                    Text(snapshot.data!.data[0].f_phone),
+                    //,Text(snapshot.data!.data[1].f_name)
+                    //,Text(snapshot.data!.data[2].f_name)
+                  ],
                 ),
                 );
-
               } else if (snapshot.hasError) {
                 return Text('${snapshot.error}');
               }
@@ -118,6 +127,7 @@ class _MyAppState extends State<MyApp>
               return const CircularProgressIndicator();
             },
           ),
+
         ),
       ),
     );
