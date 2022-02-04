@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_try/color.dart';
+import 'package:flutter_try/detailPage/FcDetail.dart';
 import 'package:flutter_try/page1/HomePage2.dart';
 import 'package:flutter_try/page1/main.dart';
-import 'package:flutter_try/page2/FcDetail.dart';
+import 'package:flutter_try/detailPage/FcDetail4.dart';
 
 
 class HomePage1 extends StatelessWidget {
@@ -46,7 +47,7 @@ class HomePage1 extends StatelessWidget {
                       IconButton(onPressed: (){
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) =>NoPoverty())
+                            MaterialPageRoute(builder: (context) =>NoPoverty1())
                         );
                       },icon: Icon(Icons.arrow_forward_ios),),
 
